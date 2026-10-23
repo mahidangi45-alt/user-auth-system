@@ -183,7 +183,7 @@ Test the following cases:
 4. Review the files before uploading.
 5. Never publish passwords, session secrets, or other private credentials.
 
-## 6. Project Structure
+## 16. Project Structure
 
     user-auth-system/
     ├── public/
@@ -204,15 +204,27 @@ Test the following cases:
 
 Note: `.env` and the actual database file are local files and should not be committed to a public repository.
 
-## 7. Expected Result
+## 17. Expected Result
 
 The completed application provides registration, login, password hashing, database integration, session-based authentication, a protected dashboard, and logout functionality.
 
-## 8. Learning Outcomes
+## 18. Learning Outcomes
 
 Through this project, I practised frontend development, backend API development, database integration, password hashing, session management, input validation, and basic web application security.
 
-## 9. Author
+## Security Best Practices Checklist
+
+- **SQL Injection:** Database queries use parameterized statements instead of directly concatenating user input into SQL queries.
+- **Password Security:** Passwords are hashed using bcryptjs before being stored in the database. Plain-text passwords are not stored.
+- **Password Validation:** Passwords must meet the minimum length and complexity requirements.
+- **Session Security:** Sessions use HTTP-only cookies, an appropriate SameSite setting, and secure cookies in production.
+- **Input Validation:** User inputs are validated on the server. Client-side validation improves usability but is not treated as a security boundary.
+- **XSS Mitigation:** User-provided data must be safely rendered and escaped. Avoid inserting untrusted input using `innerHTML`.
+- **Rate Limiting:** Authentication endpoints have rate limiting to help reduce repeated login attempts.
+- **Secrets Management:** Actual secrets and environment files are excluded from Git using `.gitignore`. Required variables are documented in `.env.example`.
+- **Error Handling:** The application returns appropriate error responses without exposing passwords, session secrets, or sensitive server details.
+
+## 19. Author
 
 Name: Mahi Dangi
 
