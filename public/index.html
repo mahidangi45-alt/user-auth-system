@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureAuth | User Authentication</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="auth-container">
+    <section class="auth-card">
+      <div class="logo">S</div>
+      <h1>Welcome to SecureAuth</h1>
+      <p class="subtitle">Create your account or sign in</p>
+
+      <div class="tabs">
+        <button type="button" id="signup-tab" class="tab active">
+          Sign Up
+        </button>
+        <button type="button" id="login-tab" class="tab">
+          Login
+        </button>
+      </div>
+
+      <form id="signup-form" novalidate>
+        <h2>Create Account</h2>
+
+        
+     <label for="signup-name">Full Name</label>
+     <input
+      type="text"
+      id="signup-name"
+      placeholder="Enter your full name"
+      autocomplete="name"
+      required
+    >
+    <small class="error" id="signup-name-error"></small>
+
+         
+        <label for="signup-email">Email address</label>
+        <input
+          type="email"
+          id="signup-email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+        <small class="error" id="signup-email-error"></small>
+
+
+
+        <label for="signup-password">Password</label>
+        <input
+          type="password"
+          id="signup-password"
+          placeholder="At least 8 characters"
+          autocomplete="new-password"
+          required
+        >
+        <small class="error" id="signup-password-error"></small>
+
+        <label for="confirm-password">Confirm password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          placeholder="Enter password again"
+          autocomplete="new-password"
+          required
+        >
+        <small class="error" id="confirm-password-error"></small>
+
+        <button type="submit" class="submit-btn">Create Account</button>
+        <p class="form-message" id="signup-message" role="status"></p>
+      </form>
+
+      <form id="login-form" hidden novalidate>
+        <h2>Welcome Back!</h2>
+
+        <label for="login-email">Email address</label>
+        <input
+          type="email"
+          id="login-email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+        <small class="error" id="login-email-error"></small>
+
+        <label for="login-password">Password</label>
+        <input
+          type="password"
+          id="login-password"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required
+        >
+        <small class="error" id="login-password-error"></small>
+
+        <button type="submit" class="submit-btn">Login</button>
+        <p class="form-message" id="login-message" role="status"></p>
+      </form>
+
+      <p class="security-note">
+        Your security matters. Never share your password.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
